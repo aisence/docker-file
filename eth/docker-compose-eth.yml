@@ -1,0 +1,13 @@
+version: "3"
+services:
+  ethereum:
+    container_name: ethereum
+    image: ethereum/client-go:stable
+    restart: always
+    privileged: true
+    ports:
+      - 8545:18545
+      - 30303:30303
+    volumes:
+      - /data/.ethereum:/root/.ethereum
+    command: " --syncmode 'full' --rpc --rpcaddr 0.0.0.0 --rpcport 18545 --rpcapi 'web3,db,eth,net,personal,admin,txpool,miner' --rpccorsdomain '*'"

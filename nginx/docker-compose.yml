@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+
+  nginx:
+    image: nginx:1.15.10
+    container_name: nginx
+    ports:
+      - '8000:80'
+      - '8001:81'
+      - '8002:82'
+      - '8003:83'
+      - '8004:84'
+      - '8005:85'
+      - '8006:86'
+      - '8007:87'
+      - '8008:88'
+      - '8009:89'
+      - '9000:90'
+      - '9003:93'
+      - '443:443'
+    volumes:
+      - /root/nginx/conf.d:/etc/nginx/conf.d
+      - /root/nginx/log:/var/log/nginx
+      - /root/nginx/www:/var/www/html
+    restart: always
+    user: root

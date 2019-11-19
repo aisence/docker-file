@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql5.7
+    ports:
+      - '3300:3306'
+    volumes:
+      - /root/docker/mysql/db:/var/lib/mysql
+      - /root/docker/mysql/dbbackup:/var/backups
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=wallet
+    restart: always
+    tty: true

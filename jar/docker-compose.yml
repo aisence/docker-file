@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    container_name: api_dev
+    image: api-dev
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /root:/app
+    env_file:
+      - ./.env
+    ports:
+      - 8080:8080
