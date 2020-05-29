@@ -1,0 +1,11 @@
+version: '3'
+services:
+   nexus:
+     image: sonatype/nexus3:latest
+     container_name: nexus
+     restart: always
+     privileged: true
+     ports:
+       - 8081:8081
+     volumes:
+       - /root/nexus/nexus-data:/nexus-data
